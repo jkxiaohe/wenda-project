@@ -1,0 +1,51 @@
+<html>
+<body>
+<pre>
+    $!{value1}
+    $!{value2}
+    ${value3}
+    ${value1}
+
+    colors : $!{colors}
+
+    #foreach($color in $!{colors})
+        this is color $!{foreach.index} : $color , $!{foreach.count}
+    #end
+
+    #foreach($key in $map.keySet())
+        number : $key , value : $map.get($key)
+    #end
+
+    #foreach($kv in $map.entrySet())
+        number : $kv.key , value:$kv.value
+    #end
+
+    User : $!{user}
+    $!{user.description}
+    $!{user.getDescription()}
+
+    #set($title="nowcoder")
+    title : $!{title}
+
+    include:  #include("header.html")
+    parse: #parse("header.html")
+
+    #macro(render_color,$index,$color)
+        color render macro $index , $color
+    #end
+
+    #foreach($color in $colors)
+        #render_color($foreach.index,$color)
+    #end
+
+    #set($hello = "hello")
+    #set($helloworld1="$!{hello} world")
+    $!hello
+    $helloworld1
+
+    #set($helloworld2 = '$!{hello} world')
+    $helloworld2
+
+</pre>
+</body>
+</html>
