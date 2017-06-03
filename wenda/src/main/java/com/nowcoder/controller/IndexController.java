@@ -27,12 +27,12 @@ public class IndexController {
     @Autowired
     WendaService wendaService;
 
-    @RequestMapping(path = {"/","/index"} , method = {RequestMethod.GET,RequestMethod.POST})
+/*    @RequestMapping(path = {"/","/index"} , method = {RequestMethod.GET,RequestMethod.POST})
     @ResponseBody
     public String index(HttpSession httpSession){
         logger.info("visit home");
         return wendaService.getMessage(2) + "hello nowcoder" + httpSession.getAttribute("msg");
-    }
+    }*/
 
     @RequestMapping(path = {"/profile/{groupId}/{userId}"})
     @ResponseBody
